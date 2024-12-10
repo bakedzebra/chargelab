@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"dd5a46515a65313caa31d207842829aa","name":"io.oz.ChargersApiTest","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}},{"uid":"326c65c3e4246847ffaacfad0a54925a","name":"io.oz.CompletedTransactionsApiTest","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}

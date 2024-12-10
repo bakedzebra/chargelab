@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Dec 10 14:02:19 GMT 2024","Tue Dec 10 14:02:20 GMT 2024","299","","io.oz.CompletedTransactionsApiTest","","io.oz.CompletedTransactionsApiTest","testCompletedTransactionsApi_Returns_403","testCompletedTransactionsApi_Returns_403()",""
+"passed","Tue Dec 10 14:02:19 GMT 2024","Tue Dec 10 14:02:19 GMT 2024","326","","io.oz.ChargersApiTest","","io.oz.ChargersApiTest","testChargersApi_Returns_404","testChargersApi_Returns_404()",""
+"passed","Tue Dec 10 14:02:17 GMT 2024","Tue Dec 10 14:02:19 GMT 2024","1921","","io.oz.ChargersApiTest","","io.oz.ChargersApiTest","testChargersApi_Returns_200","testChargersApi_Returns_200()",""
+"passed","Tue Dec 10 14:02:19 GMT 2024","Tue Dec 10 14:02:19 GMT 2024","293","","io.oz.CompletedTransactionsApiTest","","io.oz.CompletedTransactionsApiTest","testCompletedTransactionsApi_Returns_401","testCompletedTransactionsApi_Returns_401()",""
