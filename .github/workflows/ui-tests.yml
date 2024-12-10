@@ -1,4 +1,4 @@
-name: Build and Run API Tests
+name: Build and Run Selenium Tests
 
 on:
   workflow_call:
@@ -19,5 +19,8 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
+      - name: Install Chrome
+        run: ./gradlew installChrome
+
       - name: Build
-        run: cd ./api-tests && ./gradlew clean test
+        run: cd ./ui-tests && ./gradlew clean test

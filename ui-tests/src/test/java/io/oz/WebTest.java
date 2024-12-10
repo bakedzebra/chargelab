@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.function.Consumer;
 
@@ -16,7 +17,12 @@ public class WebTest {
     }
 
     void withDriver(Consumer<WebDriver> test) {
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+
+        WebDriver driver = new ChromeDriver(options);
         driver.get(PAGE_URL);
         driver.manage().window().maximize();
 

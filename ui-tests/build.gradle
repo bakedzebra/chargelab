@@ -1,29 +1,4 @@
-plugins {
-    id 'java'
-}
-
-group = 'io.oz'
-version = '1.0'
-
-repositories {
-    mavenCentral()
-}
-
-ext {
-    seleniumVerion = '4.27.0'
-    webdrivermanagerVersion = '4.27.0'
-}
-
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-
     implementation "io.github.bonigarcia:webdrivermanager:${webdrivermanagerVersion}"
     implementation "org.seleniumhq.selenium:selenium-java:${seleniumVerion}"
-
-    testImplementation "io.qameta.allure:allure-junit5"
-}
-
-test {
-    useJUnitPlatform()
 }
