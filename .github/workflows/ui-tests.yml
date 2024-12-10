@@ -29,4 +29,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ui-tests-allure
-          path: ./api-tests/build/allure-results
+          path: ./ui-tests/build/allure-results
