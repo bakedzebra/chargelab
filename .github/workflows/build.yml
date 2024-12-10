@@ -10,6 +10,7 @@ jobs:
   ui-tests:
     uses: ./.github/workflows/ui-tests.yml
   publish:
+    needs: [api-tests, ui-tests]
     runs-on: ubuntu-latest
     steps:
       - name: Load test report history

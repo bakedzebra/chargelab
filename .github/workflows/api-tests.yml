@@ -20,4 +20,4 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
 
       - name: Build
-        run: cd ./api-tests && ./gradlew clean test
+        run: ./gradlew api-tests:test

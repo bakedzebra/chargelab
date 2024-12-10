@@ -23,4 +23,4 @@ jobs:
         run: ./gradlew installChrome
 
       - name: Build
-        run: cd ./ui-tests && ./gradlew clean test
+        run: ./gradlew ui-tests:test
