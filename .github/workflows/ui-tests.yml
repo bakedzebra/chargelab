@@ -24,3 +24,9 @@ jobs:
 
       - name: Build
         run: ./gradlew ui-tests:test
+
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: api-tests-allure
+          path: ./api-tests/build/allure-results

@@ -14,8 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     if: always()
     steps:
-      - name: Update allure-results folder permissions
-        run: ls
+      - uses: actions/download-artifact@v4
+        with:
+          path: ./allure-reports
+          merge-multiple: true
 
       - name: Load test report history
         uses: actions/checkout@v3
@@ -31,7 +33,7 @@ jobs:
         with:
           gh_pages: gh-pages
           allure_history: allure-history
-          allure_results: build/allure-results
+          allure_results: ./allure-reports
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
