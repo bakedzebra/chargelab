@@ -15,7 +15,7 @@ jobs:
     if: always()
     steps:
       - name: Update allure-results folder permissions
-        run: chmod 777 -R ./build/allure-results/
+        run: ls
 
       - name: Load test report history
         uses: actions/checkout@v3
