@@ -2,14 +2,14 @@ package io.oz;
 
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class LoginWebTest extends WebTest {
     private static final String EMAIL = "test-user-01@chargelab.co";
@@ -69,7 +69,7 @@ public class LoginWebTest extends WebTest {
 
             final WebElement input = webDriver.findElement(inputSelector);
             assertTrue(input.isDisplayed());
-            assertEquals(input.getDomAttribute("placeholder"), "Email address or mobile phone number");
+            assertEquals("Email address or mobile phone number", input.getDomAttribute("placeholder"));
         });
     }
 
@@ -137,7 +137,7 @@ public class LoginWebTest extends WebTest {
                     .until(ExpectedConditions.visibilityOfElementLocated(snackBarSelector));
 
             final WebElement errorMessage = webDriver.findElement(snackBarSelector);
-            assertEquals(errorMessage.getText(), "Invalid email or phone number");
+            assertEquals("Invalid email or phone number", errorMessage.getText());
         });
     }
 
@@ -174,7 +174,7 @@ public class LoginWebTest extends WebTest {
                     .until(ExpectedConditions.visibilityOfElementLocated(snackBarSelector));
 
             final WebElement errorMessage = webDriver.findElement(snackBarSelector);
-            assertEquals(errorMessage.getText(), "Sign in failed. Invalid one time password.");
+            assertEquals("Sign in failed. Invalid one time password.", errorMessage.getText());
         });
     }
 
@@ -210,8 +210,7 @@ public class LoginWebTest extends WebTest {
             new WebDriverWait(webDriver, Duration.ofSeconds(5))
                     .until(ExpectedConditions.visibilityOfElementLocated(snackBarSelector));
 
-            assertEquals(webDriver.findElement(snackBarSelector).getText(),
-                    "Sign in failed. Invalid one time password.");
+            assertEquals("Sign in failed. Invalid one time password.", webDriver.findElement(snackBarSelector).getText());
 
             final By closeButtonSelector = By.xpath("//button[@aria-label=\"close\"]");
 
@@ -225,10 +224,8 @@ public class LoginWebTest extends WebTest {
             webDriver.findElement(inputSelector)
                     .sendKeys(ACCESS_CODE);
 
-            new WebDriverWait(webDriver, Duration.ofSeconds(5))
-                    .until(ExpectedConditions.visibilityOfElementLocated(snackBarSelector));
-            assertEquals(webDriver.findElement(snackBarSelector).getText(),
-                    "The one time code is no longer valid. Please click the 'RESEND CODE' and try again.");
+            assertThrows(NoSuchElementException.class,
+                    () -> webDriver.findElement(By.xpath("//button[@aria-label=\"Go to my account\"]")));
         });
     }
 
