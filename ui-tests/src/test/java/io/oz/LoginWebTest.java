@@ -229,7 +229,6 @@ public class LoginWebTest extends WebTest {
                     .until(ExpectedConditions.visibilityOfElementLocated(snackBarSelector));
             assertEquals(webDriver.findElement(snackBarSelector).getText(),
                     "The one time code is no longer valid. Please click the 'RESEND CODE' and try again.");
-
         });
     }
 

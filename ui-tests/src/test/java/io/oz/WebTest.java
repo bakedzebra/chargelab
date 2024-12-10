@@ -24,7 +24,6 @@ public class WebTest {
 
         WebDriver driver = new ChromeDriver(options);
         driver.get(PAGE_URL);
-        driver.manage().window().maximize();
 
         test.accept(driver);
     }
