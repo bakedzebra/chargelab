@@ -112,7 +112,7 @@ public class LoginWebTest extends WebTest {
     }
 
     @Test
-    public void shouldLoginWrongEmail() {
+    public void shouldRejectLoginWithWrongEmail() {
         withDriver(webDriver -> {
             final By logInButtonSelector = By.xpath("//button[text()=\"Log in\"]");
 
@@ -142,7 +142,7 @@ public class LoginWebTest extends WebTest {
     }
 
     @Test
-    public void shouldLoginWrongAccessCode() {
+    public void shouldRejectLoginWithWrongAccessCode() {
         withDriver(webDriver -> {
             final By logInButtonSelector = By.xpath("//button[text()=\"Log in\"]");
 
@@ -179,7 +179,7 @@ public class LoginWebTest extends WebTest {
     }
 
     @Test
-    public void shouldResendCodeOnLogin() {
+    public void shouldLoginWithResendCode() {
         withDriver(webDriver -> {
             final By logInButtonSelector = By.xpath("//button[text()=\"Log in\"]");
 
