@@ -5,6 +5,7 @@ on:
 
 jobs:
   build-and-test:
+    name: Build and Run Selenium Tests
     runs-on: ubuntu-latest
 
     steps:

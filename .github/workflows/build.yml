@@ -6,10 +6,13 @@ on:
 
 jobs:
   api-tests:
+    name: Build and Run API Tests
     uses: ./.github/workflows/api-tests.yml
   ui-tests:
+    name: Build and Run Selenium Tests
     uses: ./.github/workflows/ui-tests.yml
   publish:
+    name: Publish Results
     needs: [api-tests, ui-tests]
     runs-on: ubuntu-latest
     if: always()
